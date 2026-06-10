@@ -1,0 +1,341 @@
+{
+  "deviceType": "WHEEL",
+  "version": "1.0",
+  "registers": [
+    {
+      "address": 0,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": false,
+      "name": "READ_ADDR_L",
+      "type": "UINT8",
+      "description": "Младший байт адреса для чтения \\",
+      "hidden": true
+    },
+    {
+      "address": 1,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": false,
+      "name": "READ_ADDR_H",
+      "type": "UINT8",
+      "description": "Старший байт адреса для чтения \\",
+      "hidden": true
+    },
+    {
+      "address": 2,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": false,
+      "name": "READ_SIZE",
+      "type": "UINT8",
+      "description": "Размер данных для чтениe \\",
+      "hidden": true
+    },
+    {
+      "address": 3,
+      "size": 1,
+      "readable": false,
+      "writable": true,
+      "persistent": false,
+      "name": "CMD",
+      "type": "UINT8",
+      "description": "Команда управления \\",
+      "hidden": true
+    },
+    {
+      "address": 4,
+      "size": 1,
+      "readable": true,
+      "writable": false,
+      "persistent": false,
+      "name": "STATUS",
+      "type": "UINT8",
+      "description": "Статус последней операции \\",
+      "hidden": true
+    },
+    {
+      "address": 5,
+      "size": 1,
+      "readable": true,
+      "writable": false,
+      "persistent": false,
+      "name": "VERSION",
+      "type": "UINT8",
+      "description": "Версия протокола \\"
+    },
+    {
+      "address": 6,
+      "size": 1,
+      "readable": true,
+      "writable": false,
+      "persistent": false,
+      "name": "DEVICE_TYPE",
+      "type": "UINT8",
+      "description": "Тип устройства (0=WHEEL, 1=EXT) \\"
+    },
+    {
+      "address": 16,
+      "size": 4,
+      "readable": true,
+      "writable": false,
+      "persistent": false,
+      "name": "DEVICE_ID",
+      "type": "UINT32",
+      "group": "System",
+      "description": "Уникальный идентификатор устройства (MAC) \\"
+    },
+    {
+      "address": 20,
+      "size": 4,
+      "readable": true,
+      "writable": false,
+      "persistent": false,
+      "name": "FW_VERSION",
+      "type": "UINT32",
+      "group": "System",
+      "description": "Версия прошивки (major.minor.patch.build) \\"
+    },
+    {
+      "address": 26,
+      "size": 4,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "BOOT_COUNT",
+      "type": "UINT32",
+      "group": "System",
+      "description": "Счетчик загрузок устройства \\"
+    },
+    {
+      "address": 39,
+      "size": 16,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "DEVICE_NAME",
+      "type": "STRING",
+      "group": "System",
+      "description": "Имя устройства \\",
+      "defaultValue": "MonoWheel"
+    },
+    {
+      "address": 64,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_ENABLED",
+      "type": "BOOLEAN",
+      "group": "ThirdEye",
+      "description": "Включение дисплея ThirdEye на шлеме \\",
+      "defaultValue": true
+    },
+    {
+      "address": 65,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_TOP_COLUMN",
+      "type": "ENUM",
+      "group": "ThirdEye",
+      "description": "Верхнее поле дисплея ThirdEye \\",
+      "defaultValue": 1,
+      "enumValues": {
+        "0": "NONE",
+        "1": "SPEED",
+        "2": "PWM",
+        "3": "VOLTAGE",
+        "4": "CURRENT",
+        "5": "POWER",
+        "6": "BATTERY",
+        "7": "TEMP",
+        "8": "DISTANCE",
+        "9": "RIDE_TIME"
+      }
+    },
+    {
+      "address": 66,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_BOTTOM_COLUMN",
+      "type": "ENUM",
+      "group": "ThirdEye",
+      "description": "Нижнее поле дисплея ThirdEye \\",
+      "defaultValue": 6,
+      "enumValues": {
+        "0": "NONE",
+        "1": "SPEED",
+        "2": "PWM",
+        "3": "VOLTAGE",
+        "4": "CURRENT",
+        "5": "POWER",
+        "6": "BATTERY",
+        "7": "TEMP",
+        "8": "DISTANCE",
+        "9": "RIDE_TIME"
+      }
+    },
+    {
+      "address": 67,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_SHOW_NAMES",
+      "type": "BOOLEAN",
+      "group": "ThirdEye",
+      "description": "Показывать названия полей на дисплее \\",
+      "defaultValue": true
+    },
+    {
+      "address": 68,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_BRIGHTNESS",
+      "type": "UINT8",
+      "group": "ThirdEye",
+      "description": "Яркость дисплея ThirdEye \\",
+      "min": 0,
+      "max": 255,
+      "defaultValue": 128
+    },
+    {
+      "address": 69,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_AUTO_CONNECT",
+      "type": "BOOLEAN",
+      "group": "ThirdEye",
+      "description": "Автоматическое подключение к ThirdEye \\",
+      "defaultValue": true
+    },
+    {
+      "address": 70,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_RECONN_INTERVAL",
+      "type": "UINT8",
+      "group": "ThirdEye",
+      "description": "Интервал попыток переподключения \\",
+      "unit": "s",
+      "min": 1,
+      "max": 60,
+      "defaultValue": 10
+    },
+    {
+      "address": 71,
+      "size": 16,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "THIRD_EYE_TARGET_NAME",
+      "type": "STRING",
+      "group": "ThirdEye",
+      "description": "BLE имя устройства ThirdEye (префикс) \\",
+      "defaultValue": "ThirdEye_"
+    },
+    {
+      "address": 87,
+      "size": 1,
+      "readable": true,
+      "writable": false,
+      "persistent": false,
+      "name": "THIRD_EYE_CONN_STATE",
+      "type": "ENUM",
+      "group": "ThirdEye",
+      "description": "Состояние подключения к ThirdEye \\",
+      "enumValues": {
+        "0": "DISCONNECTED",
+        "1": "SCANNING",
+        "2": "CONNECTING",
+        "3": "CONNECTED",
+        "255": "ERROR"
+      }
+    },
+    {
+      "address": 96,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "EXT_PROXY_ENABLE",
+      "type": "BOOLEAN",
+      "group": "Extentions",
+      "description": "Отправка данных на внешние модули \\",
+      "defaultValue": true
+    },
+    {
+      "address": 98,
+      "size": 6,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "EXT_PROXY_PEER_GP",
+      "type": "STRING",
+      "group": "Extentions",
+      "description": "Идентификатор группы подключаемых внешних устройств \\",
+      "defaultValue": "EXT1"
+    },
+    {
+      "address": 128,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "EXT_PROXY_GP_CAP",
+      "type": "UINT8",
+      "group": "Extentions",
+      "description": "Максимальное число подключаемых внешних устройств \\",
+      "min": 0,
+      "max": 3,
+      "defaultValue": 1
+    },
+    {
+      "address": 160,
+      "size": 1,
+      "readable": true,
+      "writable": true,
+      "persistent": true,
+      "name": "UART_PROTOCOL",
+      "type": "ENUM",
+      "group": "UART",
+      "description": "Протокол обмена с контроллером колеса \\",
+      "defaultValue": 0,
+      "enumValues": {
+        "0": "MOCK",
+        "1": "VETERAN"
+      }
+    }
+  ],
+  "groups": [
+    {
+      "name": "\"Extentions\"",
+      "description": "Настройки группы \"Extentions\""
+    },
+    {
+      "name": "System",
+      "description": "Настройки группы System"
+    },
+    {
+      "name": "ThirdEye",
+      "description": "Настройки группы ThirdEye"
+    },
+    {
+      "name": "UART",
+      "description": "Настройки группы UART"
+    }
+  ]
+}

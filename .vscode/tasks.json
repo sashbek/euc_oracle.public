@@ -1,0 +1,75 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Convert H to JSON (Wheel)",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "${workspaceFolder}/scripts/h_to_json.py",
+                "${workspaceFolder}/wheel_module/src/settings_register_map.h",
+                "${workspaceFolder}/json/wheel_registers.json",
+                "WHEEL"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Convert JSON to H (Wheel)",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "${workspaceFolder}/scripts/json_to_h.py",
+                "${workspaceFolder}/json/wheel_registers.json",
+                "${workspaceFolder}/wheel_module/src/settings_register_map.h"
+            ],
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Convert H to JSON (LED)",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "${workspaceFolder}/scripts/h_to_json.py",
+                "${workspaceFolder}/led_module/src/settings_register_map.h",
+                "${workspaceFolder}/json/led_registers.json",
+                "LED"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Convert JSON to H (LED)",
+            "type": "shell",
+            "command": "py",
+            "args": [
+                "${workspaceFolder}/scripts/json_to_h.py",
+                "${workspaceFolder}/json/led_registers.json",
+                "${workspaceFolder}/led_module/src/settings_register_map.h"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Sync All: H -> JSON",
+            "dependsOn": [
+                "Convert H to JSON (Wheel)",
+                "Convert H to JSON (LED)"
+            ],
+            "group": "build"
+        },
+        {
+            "label": "Sync All: JSON -> H",
+            "dependsOn": [
+                "Convert JSON to H (Wheel)",
+                "Convert JSON to H (LED)"
+            ],
+            "group": "build"
+        }
+    ]
+}
